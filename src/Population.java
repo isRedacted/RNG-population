@@ -6,7 +6,7 @@ public class Population {
 		long town = alien / 100;
 		long city = alien / 10000;
 		long megacity = alien / 10000000;
-		String[] list = {"Mercury","Venus","Mars","Jupiter","Saturn","Uranus","Pluto","O Hai Mark"};
+		String[] list = {"Mercury","Venus","Mars","Jupiter","Saturn","Uranus","Pluto","O Hai Mark","Chan"};
 		int listlength = list.length;
 		int rand = (int) (Math.random() * listlength);
 		String Planet = list[rand];
@@ -16,6 +16,11 @@ public class Population {
 			town = alien / 100;
 			city = alien / 10000;
 			megacity = alien / 10000000;
+			double polfac = Math.random();
+			if (megacity >= 10 && polfac < 0.2){
+				System.out.println("Uh oh! Acid rain");
+				alien = alien/100;
+			}
 			if (alien < 100){
 			System.out.println("The population of the aliens in generation "
 					+ gener + " is " + alien + ".");
